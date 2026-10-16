@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kalkulator IPK Modern & Multimedia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header dengan Foto Banner -->
+    <header>
+      <div class="profile-banner">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Ilustrasi Kuliah" class="header-img">
+      </div>
+      <h1><i class="fa-solid fa-graduation-cap"></i> Kalkulator IPK</h1>
+      <p>Hitung Indeks Prestasi Semester & Kumulatif secara praktis dan presisi</p>
+    </header>
+
+    <!-- Panel Kontrol Audio (Musik Fokus) -->
+    <div class="multimedia-card">
+      <div class="media-box" style="width: 100%;">
+        <label><i class="fa-solid fa-music"></i> Musik Fokus Belajar (Lo-Fi)</label>
+        <audio controls class="custom-audio">
+          <source src="Hearts2Hearts.mp3" type="audio/mpeg">
+          Browser Anda tidak mendukung elemen audio.
+        </audio>
+      </div>
+    </div>
+
+    <!-- Ringkasan IPK -->
+    <div class="summary-card">
+      <div class="stat-box">
+        <span class="label">IPK Kumulatif</span>
+        <span class="value" id="total-ipk">0.00</span>
+        <div id="predikat-badge" class="badge badge-good">Belum Ada Data</div>
+      </div>
+      <div class="stat-box">
+        <span class="label">Total SKS Lulus</span>
+        <span class="value" id="total-sks">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="label">Total Matakuliah</span>
+        <span class="value" id="total-matkul">0</span>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions-bar">
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="addSemester()">
+          <i class="fa-solid fa-plus"></i> Tambah Semester
+        </button>
+        <button class="btn btn-secondary" onclick="exportSummary()">
+          <i class="fa-solid fa-copy"></i> Salin Ringkasan
+        </button>
+      </div>
+      <button class="btn btn-secondary" onclick="resetAll()">
+        <i class="fa-solid fa-rotate-right"></i> Reset Semua
+      </button>
+    </div>
+
+    <!-- Container Tempat Semester Berada -->
+    <div id="semester-container"></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
